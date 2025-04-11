@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>expense tracker</title>
+
+    <!-- links css, js -->
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
+
+    <!-- icons -->
+     <link rel="shortcut icon" href="./img/budget.ico" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+    />
+  </head>
+  <body>
+    <!-- app -->
+    <div class="app">
+      <!-- summary -->
+      <div class="summary">
+        <h2>summary</h2>
+        <!-- summary-info -->
+        <div class="summary-info">
+          <!-- balance -->
+          <div class="balance">
+            <h3>balance</h3>
+            <p><span id="sign_op">+</span><span id="balance-num">0</span>$</p>
+          </div>
+          <!-- expense -->
+          <div class="expense">
+            <h3>expense</h3>
+            <p>-<span id="expense-num">0</span>$</p>
+          </div>
+          <!-- income -->
+          <div class="income">
+            <h3>income</h3>
+            <p>+<span id="income-num">0</span>$</p>
+          </div>
+        </div>
+      </div>
+      <!-- end of summary -->
+
+      <!-- income section -->
+      <section class="income-section">
+        <h2>income</h2>
+        <!-- list of incomes -->
+        <ul class="income-list">
+          <li>
+            <div class="square"></div>
+            <div class="list-content">
+              <h3></h3>
+              <p>+<span>0</span>$</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <!-- end of income section -->
+
+      <!-- expense section -->
+      <div class="expense-section">
+        <h2>expense</h2>
+        <!-- list of expense -->
+        <ul class="expense-list">
+          <li>
+            <div style="background: var(--nice-c6);" class="square"></div>
+            <div class="list-content">
+              <h3></h3>
+              <p>-<span>0</span>$</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- end of expense section -->
+
+      <!-- add btn -->
+      <div class="add-btn">
+        <button onclick="turn_add_page()"><i class="ri-add-line"></i></button>
+      </div>
+      <!-- end of add btn -->
+    </div>
+    <!-- end of app -->
+
+    <!-- show add page -->
+    <div class="add-page">
+      <h2>add expense</h2>
+
+			<!-- go back -->
+			<div onclick="go_back()" class="go-back">
+				<i class="ri-arrow-left-line"></i>
+			</div>
+			
+
+      <!-- form -->
+      <form onsubmit="add_expense()" class="form">
+        <input autocomplete="off" required type="text" id="description" placeholder="Enter description" />
+        <input required type="number" id="amount" placeholder="Enter Amount" />
+				<input id="submit" type="submit" >
+      </form>
+    </div>
+    <!-- end of show add page -->
+  </body>
+</html>

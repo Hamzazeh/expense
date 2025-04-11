@@ -1,0 +1,370 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* root */
+:root {
+  --accent: #97e5cb;
+  --bg: #c7e6d6;
+  --bg-app: #fcfcfc;
+  --text: #6e777d;
+  --expense-c: #ea9dde;
+  --highlight-c: #d9efe8;
+  --line-c: #bdbdbd;
+
+  --nice-c1: #c99ff0;
+  --nice-c2: #f8c183;
+  --nice-c3: #53d488;
+  --nice-c4: #baa78b;
+  --nice-c5: #6ed1f4;
+  --nice-c6: #f56fa1;
+}
+
+/* selection */
+::selection{
+	background: var(--highlight-c);
+	color: var(--text);
+}
+
+html {
+  font-size: 62.5%;
+  font-family: poppins;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 2rem 0;
+}
+
+/* app */
+.app {
+  background: var(--bg-app);
+  width: 100%;
+  max-width: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 3rem 3rem;
+  border-radius: 18px;
+  box-shadow: 0px 0px 30px #70cf9e75;
+  row-gap: 3rem;
+  position: relative;
+  /* display: none; */
+}
+
+/* summary */
+.app .summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.summary h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+  color: var(--text);
+  position: relative;
+  z-index: 1;
+}
+.summary h2::before {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 40%;
+  background: var(--highlight-c);
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.summary .summary-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 2rem;
+  width: 100%;
+}
+
+.balance,
+.expense,
+.income {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.balance h3,
+.expense h3,
+.income h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px dashed var(--line-c);
+  color: var(--text);
+}
+.balance p,
+.expense p,
+.income p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.expense p {
+  color: var(--expense-c);
+}
+
+#balance-num .red_c{
+  color: red;
+}
+
+/* income section */
+.income-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.income-section h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+  color: var(--text);
+  position: relative;
+  z-index: 1;
+}
+.income-section h2::before {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 40%;
+  background: var(--highlight-c);
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+ul {
+  list-style: none;
+  width: 100%;
+}
+
+ul li {
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+li .square {
+  background: var(--nice-c1);
+  min-width: 3rem;
+  min-height: 3rem;
+  border-radius: 10px;
+}
+li .list-content {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  border-bottom: 2px dashed var(--line-c);
+}
+
+.list-content h3,
+.list-content p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+/* expense */
+.expense-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.expense-section h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+  color: var(--text);
+  position: relative;
+  z-index: 1;
+}
+.expense-section h2::before {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 40%;
+  background: var(--highlight-c);
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* add-btn */
+.app .add-btn button {
+  color: #ffffff;
+  width: 8rem;
+  height: 8rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px 20px 25px 40px;
+  position: absolute;
+  bottom: 4rem;
+  right: 4rem;
+  background: var(--accent);
+  opacity: 0.6;
+  cursor: pointer;
+}
+.app .add-btn button:hover {
+  opacity: 0.5;
+}
+
+.add-btn i {
+  font-size: 5rem;
+}
+
+/* add-page */
+.add-page {
+  background: var(--bg-app);
+  width: 100%;
+  max-width: 40rem;
+  padding: 7rem 3rem 7rem;
+  border-radius: 18px;
+  box-shadow: 0px 0px 30px #70cf9e75;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.add-page h2 {
+  font-size: 3rem;
+  text-transform: capitalize;
+  color: #3c8958;
+  margin-bottom: 6rem;
+}
+
+.add-page .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.add-page .form input {
+  width: 90%;
+  height: 5rem;
+  border: 2px solid #a4e8d1;
+  outline: none;
+  border-radius: 18px;
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  color: var(--text);
+  background: #f0f5f3;
+}
+
+#submit {
+  border: none;
+  background: var(--accent);
+  color: #207841;
+  font-size: 2rem;
+  font-weight: 700;
+  box-shadow: 0px 0px 20px #97e5cb;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+/* go-back */
+.add-page .go-back {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 1.8rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.add-page .go-back i {
+  color: #f9f9f9;
+}
+
+/* mobile */
+@media (width < 450px) {
+  body {
+    padding: 0;
+  }
+
+  /* app */
+  .app {
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0px;
+    justify-content: start;
+  }
+
+  /* add page */
+  .add-page {
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0px;
+  }
+
+  /* form */
+  .add-page .form input {
+    height: 7rem;
+    margin-bottom: 1.5rem;
+  }
+  #submit {
+    margin-top: 5rem;
+  }
+
+  /* go back */
+  .add-page .go-back {
+    top: 2rem;
+    left: 2rem;
+    font-size: 2rem;
+    width: 5rem;
+    height: 5rem;
+  }
+}
